@@ -8,7 +8,12 @@ const Header = () => (
       <logo className="logo"></logo>
     </Link>
     <div className="options">
-    
+    <link className="option" to="/shop">
+    SHOP
+    </link>
+    <link className="option" to="/shop">
+    CONTACT
+    </link>
     </div>
   </div>
 )
