@@ -1,7 +1,7 @@
-import {Component} from 'react'
+import { Component } from 'react';
 
 import SignInAndSignUpPage from '../../pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
-import './sign-in.styles.scss'
+import './sign-in.styles.scss';
 
 class SignIn extends Component {
   constructor(props) {
@@ -9,39 +9,45 @@ class SignIn extends Component {
 
     this.state = {
       email: '',
-      password: ''
-    }
+      password: '',
+    };
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
 
-    this.setState({ email: '', password: ''})
-  }
+    this.setState({ email: '', password: '' });
+  };
 
-  handleChange = event => {
+  handleChange = (event) => {
     const { value, name } = event.target;
 
-    this.setState({ [name]: value })
-  }
+    this.setState({ [name]: value });
+  };
 
   render() {
-    return(
+    return (
       <div className="sign-in">
         <h2>I already have an account</h2>
         <span>Sign in with your email and password</span>
 
         <form onSubmit={this.handleSubmit}>
-        <input name="email" type="email" value={this.state.email} required />
-        <label>Email</label>
-        <input name="password" type="password" value={this.state.email} onChange={this.handleChange} required />
-        <label>Password</label>
+          <input name="email" type="email" value={this.state.email} required />
+          <label>Email</label>
+          <input
+            name="password"
+            type="password"
+            value={this.state.email}
+            onChange={this.handleChange}
+            required
+          />
+          <label>Password</label>
 
-        <input type="submit" value="Submit Form"/>
+          <input type="submit" value="Submit Form" />
         </form>
       </div>
-    )
+    );
   }
 }
 
-export default SignIn
+export default SignIn;
